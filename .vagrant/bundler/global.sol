@@ -1,0 +1,1 @@
+{"dependencies":[["vagrant-rdp",["= 0.6.0"]]],"checksum":"20b58fbc91322b2d77b05d29a4c40ca5220661fe2fb1696d7473ab6a9f345c66","vagrant_version":"2.3.7"}
