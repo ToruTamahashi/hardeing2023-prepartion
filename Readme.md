@@ -16,7 +16,7 @@ Wordpress と EC-CUBE が動く vagrant の box を作りました。
 2. `vagrant up`実行するとネットワークレンジエラーが発生するかもしれないです。そのときは`server.vm.network "private_network"`の行をコメントアウトすればとりあえずエラーは解消できます。
 3. サーバー起動後、apache が動いていない可能性があります。そのときは`sudo systemctl restart httpd`を実行してください。
 
-## Server1
+## Server1 (WordPress)
 
 ### 環境
 
@@ -89,7 +89,7 @@ wordpress:
 
 もしくは [http://127.0.0.1:8888/wp-admin/](http://172.31.103.10/wp-admin/)
 
-## Server2
+## Server2 (EC-CUBE)
 
 ### 環境
 
