@@ -1,24 +1,24 @@
 # Hardening2023 練習環境
 
-## 概要
+## 1.0 概要
 
 Wordpress と EC-CUBE が動く vagrant の box を作りました。
 インフラには詳しくないので設定周りについてはご容赦ください。
 
-## 動作要件
+## 2.0 動作要件
 
 - virtualbox
 - vagrant
 
-## 注意
+## 3.0 注意
 
 1. mac でしか動作確認していないので、windows で動くか分かりません
 2. `vagrant up`実行するとネットワークレンジエラーが発生するかもしれないです。そのときは`server.vm.network "private_network"`の行をコメントアウトすればとりあえずエラーは解消できます。
 3. サーバー起動後、apache が動いていない可能性があります。そのときは`sudo systemctl restart httpd`を実行してください。
 
-## Server1 (WordPress)
+## 4.0 Server1 (WordPress)
 
-### 環境
+### 4.1 環境
 
 - RockyLinux:8.8
 - php:7.4
@@ -48,15 +48,15 @@ wordpress:
 - username: user
 - password: TTazwIF2)hQpIZubR4
 
-### サーバー起動
+### 4.2 サーバー起動
 
 `vagrant up server1`
 
-### サーバーへ接続
+### 4.3 サーバーへ接続
 
 `vagrant ssh server1`
 
-### サーバーへ接続(ssh コマンドを使用したい場合)
+### 4.3(option) サーバーへ接続(ssh コマンドを使用したい場合)
 
 1. 接続情報取得
 
@@ -81,17 +81,17 @@ wordpress:
    上記情報を基に書き換えてください  
    `ssh vagrant@127.0.0.1 -p 2222 -i /Users/username/.vagrant.d/insecure_private_key`
 
-### サーバーへ接続(プライベート ip で接続)
+### 4.3(option) サーバーへ接続(プライベート ip で接続)
 
 `ssh vagrant@172.31.103.10 -i /Users/username/.vagrant.d/insecure_private_key`
 
-### ログイン [http://172.31.103.10/wp-admin/](http://172.31.103.10/wp-admin/)
+### 4.4 ログイン [http://172.31.103.10/wp-admin/](http://172.31.103.10/wp-admin/)
 
 もしくは [http://127.0.0.1:8888/wp-admin/](http://172.31.103.10/wp-admin/)
 
-## Server2 (EC-CUBE)
+## 5.0 Server2 (EC-CUBE)
 
-### 環境
+### 5.1 環境
 
 - RockyLinux:8.8
 - php:7.4
@@ -125,21 +125,21 @@ ec-cube:
 `symfony server:start --daemon`
 で起動
 
-### サーバー起動
+### 5.2 サーバー起動
 
 `vagrant up server2`
 
-### サーバーへ接続
+### 5.3 サーバーへ接続
 
 `vagrant ssh server2`  
 前述の他の方法でも接続できます
 
-### ログイン [http://172.31.103.11/ec-cube/admin](http://172.31.103.10/ec-cube/admin)
+### 5.4 ログイン [http://172.31.103.11/ec-cube/admin](http://172.31.103.10/ec-cube/admin)
 
 もしくは [http://127.0.0.1:8889/ec-cube/admin](http://127.0.0.1:8889/ec-cube/admin)
 
 
-## 備考
+## 6.0 備考
 
 - `vagrant up`を実行するとsever1とserver2が同時に立ち上がるのでメモリ容量にご注意ください
 
