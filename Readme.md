@@ -45,8 +45,8 @@ apache:
 wordpress:
 
 - login: /wp-admin
-- username: user
-- password: TTazwIF2)hQpIZubR4
+- username: vagrant
+- password: 0v%BsNbABfqt!XLIm6
 
 ### 4.2 サーバー起動
 
